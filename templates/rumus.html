@@ -1,0 +1,108 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Kalkulator Rumus</title>
+  </head>
+  <body>
+    <div class="seluruh">
+      <h1>Kalkulator Rumus</h1>
+
+      <form method="POST">
+        <label for="rumus">Pilih Rumus:</label>
+        <select name="rumus" id="rumus" required>
+          <option value="pick">Pilih</option>
+          <option value="persegi">Luas Persegi</option>
+          <option value="kel-persegi">Keliling Persegi</option>
+          <option value="persegi_panjang">Luas Persegi Panjang</option>
+          <option value="kel-persegi_panjang">Keliling Persegi Panjang</option>
+          <option value="segitiga">Luas Segitiga</option>
+          <option value="lingkaran">Luas Lingkaran</option>
+          <option value="kel-lingkaran">Keliling Lingkaran</option>
+        </select>
+        <br /><br />
+
+        <div id="persegi" style="display: none">
+          <label for="sisi">Sisi:</label>
+          <input type="number" name="sisi" id="sisi" />
+        </div>
+
+        <div id="kel-persegi" style="display: none">
+          <label for="sisi">Sisi:</label>
+          <input type="number" name="sisi2" id="sisi" />
+        </div>
+
+        <div id="persegi_panjang" style="display: none">
+          <label for="panjang">Panjang:</label>
+          <input type="number" name="panjang" id="panjang" />
+          <br />
+          <label for="lebar">Lebar:</label>
+          <input type="number" name="lebar" id="lebar" />
+        </div>
+
+        <div id="kel-persegi_panjang" style="display: none">
+          <label for="panjang">Panjang:</label>
+          <input type="number" name="panjang2" id="panjang" />
+          <br />
+          <label for="lebar">Lebar:</label>
+          <input type="number" name="lebar2" id="lebar" />
+        </div>
+
+        <div id="segitiga" style="display: none">
+          <label for="alas">Alas:</label>
+          <input type="number" name="alas" id="alas" />
+          <br />
+          <label for="tinggi">Tinggi:</label>
+          <input type="number" name="tinggi" id="tinggi" />
+        </div>
+
+        <div id="lingkaran" style="display: none">
+          <label for="jari-jari">Jari-Jari:</label>
+          <input type="number" name="jari-jari" id="jari-jari" />
+        </div>
+
+        <div id="kel-lingkaran" style="display: none">
+          <label for="jari-jari">Jari-Jari:</label>
+          <input type="number" name="jari-jari2" id="jari-jari" />
+        </div>
+
+        <br />
+        <button type="submit" class="btn-cal">Hitung</button>
+      </form>
+
+      {% if hasil is not none %}
+      <h2>Hasil</h2>
+      <h2>
+        {% if rumus == 'persegi' %} Luas Persegi: {{ hasil }} {% elif rumus ==
+        'persegi_panjang' %} Luas Persegi Panjang: {{ hasil }} {% elif rumus ==
+        'segitiga' %} Luas Segitiga: {{ hasil }} {% elif rumus == 'lingkaran' %}
+        Luas Lingkaran: {{ hasil }} {% elif rumus == 'kel-persegi' %} Keliling
+        Persegi: {{hasil}} {% elif rumus == 'kel-persegi_panjang' %} Keliling
+        Persegi Panjang: {{hasil}} {% elif rumus == 'kel-lingkaran' %} Keliling
+        Lingkaran: {{hasil}} {% endif %}
+      </h2>
+      {% endif %}
+
+      <button class="btn-bck">
+        <a href="/">Kembali ke halaman utama</a>
+      </button>
+    </div>
+
+    <script>
+      document.getElementById("rumus").addEventListener("change", function () {
+        document.getElementById("persegi").style.display = "none";
+        document.getElementById("persegi_panjang").style.display = "none";
+        document.getElementById("segitiga").style.display = "none";
+        document.getElementById("lingkaran").style.display = "none";
+        document.getElementById("kel-persegi").style.display = "none";
+        document.getElementById("kel-lingkaran").style.display = "none";
+        document.getElementById(this.value).style.display = "block";
+      });
+    </script>
+  </body>
+</html>

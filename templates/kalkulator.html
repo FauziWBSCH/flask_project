@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Kalkulator sederhana</title>
+  </head>
+  <body>
+    <div class="seluruh">
+      <h1>Selamat datang di Kalkulator Sederhana</h1>
+      <br />
+      <form method="POST">
+        <label for="operasi">pilih operasi</label>
+        <select name="operasi" id="operasi" required>
+          <option value="pick">Pilih</option>
+          <option value="tambah">Tambah</option>
+          <option value="kurang">Kurang</option>
+          <option value="kali">Kali</option>
+          <option value="bagi">Bagi</option>
+        </select>
+        <br />
+        <br />
+        <label for="angka1">masukkan angka 1: </label>
+        <input
+          type="number"
+          id="angka1"
+          name="angka1"
+          placeholder="Masukkan angka pertama"
+          required
+        />
+        <br />
+        <label for="angka2">masukkan angka 2: </label>
+        <input
+          type="number"
+          id="angka2"
+          name="angka2"
+          placeholder="Masukkan angka kedua"
+          required
+        />
+        <br />
+
+        <button type="submit" class="btn-cal">Hitung</button>
+      </form>
+      <br />
+      {% if hasil is not none %}
+      <h2>Hasil</h2>
+      <h2>Hasil {{angka1}} {{ operasi }} {{angka2}}: {{ hasil }}</h2>
+      {% endif %}
+      <button class="btn-bck">
+        <a href="/">kembali ke halaman utama</a>
+      </button>
+    </div>
+  </body>
+</html>

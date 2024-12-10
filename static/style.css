@@ -1,0 +1,137 @@
+body {
+  margin: 1;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(
+    90deg,
+    #3498db,
+    #2ecc71
+  ); /* Warna awal: biru ke hijau */
+  height: 100vh;
+  transition: background 1s ease;
+}
+
+.seluruh {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+body:hover {
+  background: linear-gradient(90deg, #2ecc71, #3498db);
+}
+
+.option ol li {
+  margin-bottom: 10px;
+}
+
+.body-home h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.body-home p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.option {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.option-cal {
+  width: 100%;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 10px;
+  border: 2px solid;
+  border-radius: 20px;
+  background-color: rgb(38, 227, 227);
+}
+
+.isi-cal {
+  padding: 10px;
+}
+
+select {
+  appearance: none;
+
+  color: rgb(0, 0, 0);
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  width: 200px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+select:focus {
+  outline: 2px solid #2ecc71;
+}
+
+.btn-cal a {
+  color: white;
+  text-decoration: none;
+}
+
+input {
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 200px;
+  border: 1 solid;
+  border-radius: 5px;
+}
+
+.btn-cal {
+  width: 20%;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: #67a9f5;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-cal:hover {
+  background-color: #2ecc71;
+}
+
+.btn-bck {
+  text-decoration: none;
+  color: white;
+  border: 1px solid black;
+  background-color: #3498db;
+  border-radius: 20px;
+  width: 200px;
+  height: 30px;
+}
+
+.btn-bck:hover {
+  background-color: #2ecc71;
+}
+
+.btn-bck a {
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  input {
+    width: 93%;
+  }
+
+  .btn-cal {
+    width: 30%;
+  }
+
+  .option {
+    flex-direction: column;
+    align-items: center;
+  }
+}
