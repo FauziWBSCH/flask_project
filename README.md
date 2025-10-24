@@ -63,5 +63,5 @@ Mendukung beberapa bentuk:
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/username/flask-ai-calculator.git
-cd flask-ai-calculator
+git clone https://github.com/FauziWBSCH/flask_project.git
+cd flask_project
