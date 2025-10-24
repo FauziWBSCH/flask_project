@@ -1,5 +1,4 @@
-# 🧠 Flask Web App – Kalkulator & Analisis Pintar
-
+# 🧠 Flask Web App
 Proyek ini adalah **web app berbasis Flask (Python)** yang memiliki beberapa fitur interaktif seperti:
 - Menentukan **umur** berdasarkan tahun lahir + **fakta unik dari AI (Groq API)**
 - Menghitung dan menentukan **status BMI (Body Mass Index)**
